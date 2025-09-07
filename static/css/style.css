@@ -1,0 +1,65 @@
+/* ページ全体 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* コンテナ */
+.container{
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* タイトル */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* フォーム */
+.form input[type="text"] {
+    padding: 8px;
+    width: 70%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.form bottn:hover {
+    background-color: #4CAF49;
+}
+
+/* 結果 */
+.result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 天気アイコン */
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    margin: 15px;
+}
+
+/*  エラーメッセージ*/
+.error {
+    color: red;
+    margin-top: 20px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>天気アプリ</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"
+    </head>
+    <body>
+        <div class="container">
+            <h1>天気アプリ</h1>
+            <form method="POST" class="form">
+                <input type="text" name="city" placeholder="都市名を入力">
+                <button type="submit">検索</button>
+            </form>
+
+            {% if weather_data and weather_data.get("cod") == 200 %}
+                <div class="result">
+                    <!-- 天気に応じた画像を表示-->
+                    {% if icon %}
+                        <img src="{{ url_for('static', filename=icon) }}" alt="天気アイコン" class="weather-icon">
+                    {% endif %}
+
+                    <p>都市: {{ city }}</p>
+                    <p>天気: {{ weather_data["weather"][0]["description"] }}</p>
+                    <p>気温: {{ weather_data["main"]["temp"] }}℃</p>
+                    <p>湿度: {{ weather_data["main"]["humidity"] }}%</p>
+                    <p>風速: {{ weather_data["wind"]["speed"] }} m/s</p>
+                </div>
+            {% elif weather_data %}
+                <p class="error">都市が見つかりません。正しい名前を入力してください。</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
